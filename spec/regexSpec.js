@@ -3,7 +3,7 @@ describe("your regexes", function(){
   // CHALLENGE: match an ip address
   it("should match ip addresses", function(){
 
-    var regex = /fixme/;
+    var regex = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/;
 
     var tests = [
       ["a.b.c.d", false],
@@ -29,7 +29,7 @@ describe("your regexes", function(){
   // - can only contain letters, spaces, underscores and hyphens.
   it("should filter usernames", function(){
 
-    var regex = /fixme/;
+    var regex = /^[a-zA-Z][a-zA-Z\-\s_]{3,19}$/;
 
     var tests = [
       ["shawndrost", true],
@@ -57,7 +57,7 @@ describe("your regexes", function(){
     })
   })
 
-  // CHALLENGE: extract text contents of a string with an html tag in it
+  // CHALLENGE: extract text contents of a string with a html tag in it
   // - use lazy matchers.
   // - use match groups to get your result.
   // - don't use non-regex, non-match group techniques here.
@@ -65,7 +65,7 @@ describe("your regexes", function(){
 
     var extractText = function(str){
       var matches = /fixme/.exec(str);
-      return /* something to do with matches?? */;
+      return /* something to do with matches?? matches minus tags */;
     };
 
     var tests = [
