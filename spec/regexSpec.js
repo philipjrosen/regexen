@@ -58,14 +58,15 @@ describe("your regexes", function(){
   })
 
   // CHALLENGE: extract text contents of a string with a html tag in it
-  // - use lazy matchers.
-  // - use match groups to get your result.
+  // - use lazy matchers. 
+  // - use match groups to get your result. --GO BACK TO THIS!!!
   // - don't use non-regex, non-match group techniques here.
   it("should extract text", function(){
 
     var extractText = function(str){
-      var matches = /fixme/.exec(str);
-      return /* something to do with matches?? matches minus tags */;
+      // var matches = /<.*?>/.exec(str);
+      var string = str.replace(/<.*?>/g,"");
+      return string/* something to do with matches?? matches minus tags */;
     };
 
     var tests = [
@@ -82,7 +83,7 @@ describe("your regexes", function(){
   // CHALLENGE: match a decimal number.
   it("should match decimal numbers", function(){
 
-    var regex = /fixme/;
+    var regex = /^(\-{1}\d+\.\d+|\d+\.\d+|\d+|\.\d+)$/;
 
     var tests = [
       ["-0.0", true],
@@ -112,8 +113,13 @@ describe("your regexes", function(){
   it("should detect nearby words", function(){
 
     var containsNearbyWords = function(haystack, needle){
-      // ???
-      return /* ?? */;
+      var needleReg = new RegExp("needle", "g");
+      console.log(needleReg);
+      var string = haystack.replace(needleReg,"");
+      console.log(string);
+      // ??? if a word occurs at least 2 times within 3 words return true
+      //else
+      return /*false ?? */;
     };
 
     var tests = [
